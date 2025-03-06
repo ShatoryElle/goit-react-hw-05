@@ -11,10 +11,6 @@ const axiosInstance = axios.create({
   },
 });
 
-/**
- * Загальна обробка помилок
- * @param {Function} requestFn - Функція-запит до API.
- */
 const handleRequest = async (requestFn) => {
   try {
     return await requestFn();
@@ -29,21 +25,12 @@ const handleRequest = async (requestFn) => {
   }
 };
 
-/**
- * Отримує трендові фільми за день.
- * @returns {Promise<Array>} Список трендових фільмів.
- */
+
 export const fetchTrendingMovies = () =>
   handleRequest(() =>
     axiosInstance.get("/trending/movie/day").then((res) => res.data.results)
   );
 
-/**
- * Пошук фільмів за запитом.
- * @param {string} query - Пошуковий запит.
- * @param {number} [page=1] - Номер сторінки.
- * @returns {Promise<Array>} Список знайдених фільмів.
- */
 export const fetchMoviesByQuery = (query, page = 1) =>
   handleRequest(() =>
     axiosInstance
@@ -53,32 +40,19 @@ export const fetchMoviesByQuery = (query, page = 1) =>
       .then((res) => res.data.results)
   );
 
-/**
- * Отримує деталі фільму.
- * @param {number} movieId - ID фільму.
- * @returns {Promise<Object>} Деталі фільму.
- */
+
 export const fetchMovieDetails = (movieId) =>
   handleRequest(() =>
     axiosInstance.get(`/movie/${movieId}`).then((res) => res.data)
   );
 
-/**
- * Отримує список акторів фільму.
- * @param {number} movieId - ID фільму.
- * @returns {Promise<Object>} Дані про акторів.
- */
+
 export const fetchMovieCredits = (movieId) =>
   handleRequest(() =>
     axiosInstance.get(`/movie/${movieId}/credits`).then((res) => res.data)
   );
 
-/**
- * Отримує відгуки на фільм.
- * @param {number} movieId - ID фільму.
- * @param {number} [page=1] - Номер сторінки.
- * @returns {Promise<Object>} Дані про відгуки.
- */
+
 export const fetchMovieReviews = (movieId, page = 1) =>
   handleRequest(() =>
     axiosInstance
