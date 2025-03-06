@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Базовий стиль для тіла сторінки */
+body {
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Контейнер для основного контенту */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Заголовки */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+  color: #222;
+  margin-bottom: 1em;
+}
+
+/* Посилання */
+a {
+  color: #007bff;
+  /* Синій текст */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Стиль для кнопок */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  /* Синій фон */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+  /* Темніший синій */
+}
+
+/* Секція навігації */
+nav {
+  background-color: #007bff;
+  padding: 10px 20px;
+  color: white;
+}
+
+nav a {
+  color: white;
+  margin-right: 15px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Позиціювання для 404 сторінки */
+.not-found {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.not-found h1 {
+  font-size: 5em;
+  color: #dc3545;
+}
+
+.not-found p {
+  font-size: 1.5em;
+}
+
+/* Завантаження для <Suspense> */
+.loading {
+  text-align: center;
+  margin: 50px 0;
+  font-size: 1.2em;
+  color: #555;
+}
